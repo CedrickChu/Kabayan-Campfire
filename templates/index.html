@@ -5,6 +5,10 @@
 <div
     class="background"
     style="background-image: url('{{ url_for('static', filename='images/background.png') }}');">
+
+    
+    {% include "partials/navbar.html" %}
+
     {% include "sections/hero.html" %}
     {% include "sections/how_it_works.html" %}
 </div>

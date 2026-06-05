@@ -1,64 +1,120 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar py-3">
+
     <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand fw-bold" href="#">
-            🔥 Campfire
-        </a>
 
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Desktop -->
+        <div class="desktop-navbar d-none d-lg-block">
+            <!-- Left Pill -->
+            <div class="nav-pill">
+                <ul class="navbar-nav flex-row gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#protocol">Proof-of-Work</a>
+                    </li>
 
-        <div class="collapse navbar-collapse" id="navbarContent">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#signals">Verification Signals</a>
+                    </li>
 
-            <!-- Main Navigation -->
-            <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vault">Proof Vault</a>
+                    </li>
+                </ul>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#protocol">
-                        Proof-of-Work
-                    </a>
-                </li>
+            </div>
+        
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#signals">
-                        Verification Signals
-                    </a>
-                </li>
+            <!-- Center Logo -->
+            <div class="logo-center">
+                🔥 Campfire
+            </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#vault">
-                        Proof Vault
-                    </a>
-                </li>
+            <!-- Right Pill -->
+            <div class="cta-pill">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#heritage">
-                        Palawan Heritage
-                    </a>
-                </li>
+                <ul class="navbar-nav flex-row gap-3">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#security">
-                        Trust & Security
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#heritage">Palawan Heritage</a>
+                    </li>
 
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#security">Trust & Security</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            View Whitepaper
+                        </a>
+                    </li>
 
-            <!-- CTA -->
-            <div class="d-flex gap-2">
-                <a href="#" class="btn btn-outline-light" style="color:black">
-                    View Whitepaper
-                </a>
+                </ul>
 
-                <a href="#" class="btn btn-warning fw-bold">
-                    Join Campfire
-                </a>
+            
+
             </div>
 
         </div>
+
+        <!-- Mobile -->
+        <div class="d-lg-none w-100">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <a class="navbar-brand fw-bold" href="#">
+                    🔥 Campfire
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mobileNav">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+            </div>
+
+            <div class="collapse mt-3" id="mobileNav">
+
+                <div class="mobile-menu">
+
+                    <a class="nav-link" href="#protocol">
+                        Proof-of-Work
+                    </a>
+
+                    <a class="nav-link" href="#signals">
+                        Verification Signals
+                    </a>
+
+                    <a class="nav-link" href="#vault">
+                        Proof Vault
+                    </a>
+
+                    <a class="nav-link" href="#heritage">
+                        Palawan Heritage
+                    </a>
+
+                    <a class="nav-link" href="#security">
+                        Trust & Security
+                    </a>
+
+                    <hr>
+
+                    <a href="#" class="btn btn-outline-dark w-100 mb-2">
+                        View Whitepaper
+                    </a>
+
+                    <a href="#" class="btn btn-warning w-100 fw-bold">
+                        Join Campfire
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
 </nav>

@@ -1,72 +1,214 @@
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent !important;
+}
+
+
+.desktop-navbar {
+    position: relative;
+    min-height: 90px;
+    width: 100%;
+}
+
+
+.logo-center {
+    position: absolute;
+    left: 50%;
+    top: 28px;
+
+    transform: translateX(-50%);
+
+    font-size: 1.75rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,.95);
+    white-space: nowrap;
+
+    z-index: 999;
+}
+
+.nav-pill,
+.cta-pill {
+
+    position: fixed;
+    top: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    min-height: 56px;
+
+    padding: 12px 24px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.05);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    z-index: 1000;
+}
+
+.nav-pill {
+    left: 24px;
+}
+
+.cta-pill {
+    right: 24px;
+}
+
+.nav-pill .navbar-nav,
+.cta-pill .navbar-nav {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+
+.navbar-brand,
+.nav-link,
+.cta-pill a {
+    color: rgba(255,255,255,.88) !important;
+    font-weight: 500;
+    white-space: nowrap;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.4);
+}
+
+
+.mobile-menu {
+    background: rgba(0,0,0,.25);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    padding: 20px;
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.mobile-menu .nav-link {
+    color: rgba(255,255,255,.95) !important;
+    padding: 12px 0;
+}
+
+
+
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+
+    background: rgba(0,0,0,.35);
+
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 999;
+
+    transition: opacity .3s ease;
+
+    z-index: 998;
 }
 
-body:has(.navbar .nav-link:hover,
-         .navbar .btn:hover,
-         .navbar .navbar-brand:hover)::before {
+body:has(.navbar a:hover, .navbar button:hover)::before {
     opacity: 1;
 }
 
+/* ==========================
+   HOVER EFFECTS
+========================== */
 
-
-
-.navbar {
-    position: relative;
-    z-index: 1000;
+.nav-pill,
+.cta-pill {
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        backdrop-filter .3s ease;
 }
 
-.navbar .nav-link,
-.navbar .btn,
-.navbar .navbar-brand {
-    transition: all 0.3s ease;
+.nav-pill:hover,
+.cta-pill:hover {
+    background: rgba(255,255,255,.12);
+    border-color: rgba(255,255,255,.25);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,.15),
+        0 0 20px rgba(255,255,255,.08);
 }
 
+.navbar a,
+.navbar button,
+.navbar .btn {
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        color .3s ease,
+        box-shadow .3s ease;
+}
 
-
-.navbar:has(.nav-link:hover,
-            .btn:hover,
-            .navbar-brand:hover)
-.navbar .nav-link,
-.navbar:has(.nav-link:hover,
-            .btn:hover,
-            .navbar-brand:hover)
-.navbar .btn,
-.navbar:has(.nav-link:hover,
-            .btn:hover,
-            .navbar-brand:hover)
-.navbar .navbar-brand {
-    opacity: 0.4;
+.navbar:has(a:hover, button:hover) .nav-link,
+.navbar:has(a:hover, button:hover) .navbar-brand,
+.navbar:has(a:hover, button:hover) .btn {
+    opacity: .4;
 }
 
 .navbar .nav-link:hover,
-.navbar .btn:hover,
-.navbar .navbar-brand:hover {
-    opacity: 1;
-    transform: translateY(-2px);
+.navbar .navbar-brand:hover,
+.navbar .btn:hover {
+    opacity: 1 !important;
 }
 
 .navbar .nav-link:hover {
     color: #ffc107 !important;
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+    text-shadow: 0 0 10px rgba(255,193,7,.6);
+    transform: translateY(-2px);
 }
 
 .navbar .navbar-brand:hover {
     color: #ffc107 !important;
-    text-shadow: 0 0 15px rgba(255, 193, 7, 0.8);
+    text-shadow: 0 0 15px rgba(255,193,7,.8);
+    transform: translateY(-2px);
 }
 
 .navbar .btn:hover {
     transform: translateY(-2px) scale(1.03);
 }
 
-.navbar .btn-warning:hover {
-    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+.btn-warning:hover {
+    box-shadow: 0 0 20px rgba(255,193,7,.5);
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 991px) {
+
+    body::before {
+        display: none;
+    }
+
+    .desktop-navbar {
+        display: none !important;
+    }
+
+    .navbar-toggler {
+        border-color: rgba(255,255,255,.25);
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(1);
+    }
 }
