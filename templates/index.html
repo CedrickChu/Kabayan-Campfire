@@ -2,9 +2,12 @@
 
 {% block content %}
 
-{% include "sections/hero.html" %}
-
-{% include "sections/how_it_works.html" %}
+<div
+    class="hero-how-bg"
+    style="background-image: url('{{ url_for('static', filename='images/background.png') }}');">
+    {% include "sections/hero.html" %}
+    {% include "sections/how_it_works.html" %}
+</div>
 
 {% include "sections/proof_vault.html" %}
 
