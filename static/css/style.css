@@ -80,6 +80,9 @@ body{
 
     animation: floatBadge 4s ease-in-out infinite;
 }
+.hero-primary{
+    height: 25vh;
+}
 
 @keyframes floatBadge {
     0% {
