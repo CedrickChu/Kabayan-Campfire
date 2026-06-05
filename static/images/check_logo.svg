@@ -1,0 +1,22 @@
+<svg class="hero-badge" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1d3b2a"></stop>
+            <stop offset="100%" stop-color="#0f1f16"></stop>
+        </linearGradient>
+    </defs>
+
+    <!-- Ribbon (draw FIRST so it sits behind) -->
+    <path d="M52 106 L45 130 L70 118 L95 130 L88 106" fill="#c89b3c" stroke="#0f1f16" stroke-width="1.5" stroke-linejoin="round"></path>
+
+    <!-- Outer badge -->
+    <circle cx="70" cy="65" r="45" fill="url(#badgeGrad)" stroke="#c89b3c" stroke-width="3"></circle>
+
+    <!-- Inner ring -->
+    <circle cx="70" cy="65" r="34" fill="none" stroke="#f2d27a" stroke-width="1.5" opacity="0.7"></circle>
+
+    <!-- Check mark -->
+    <path d="M56 65 L65 74 L84 55" fill="none" stroke="#f2d27a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+
+</svg>
