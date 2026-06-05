@@ -1,35 +1,72 @@
-.navbar::after {
+body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.60);
+    background: rgba(0, 0, 0, 0.35);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    z-index: -1;
+    z-index: 999;
 }
 
-
-.navbar:hover::after {
+body:has(.navbar .nav-link:hover,
+         .navbar .btn:hover,
+         .navbar .navbar-brand:hover)::before {
     opacity: 1;
 }
 
-.navbar:hover .nav-link {
-    opacity: 0.4;
+
+
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar .nav-link,
+.navbar .btn,
+.navbar .navbar-brand {
     transition: all 0.3s ease;
 }
 
-.navbar .nav-link:hover {
-    opacity: 1 !important;
-    color: #ffc107 !important;
+
+
+.navbar:has(.nav-link:hover,
+            .btn:hover,
+            .navbar-brand:hover)
+.navbar .nav-link,
+.navbar:has(.nav-link:hover,
+            .btn:hover,
+            .navbar-brand:hover)
+.navbar .btn,
+.navbar:has(.nav-link:hover,
+            .btn:hover,
+            .navbar-brand:hover)
+.navbar .navbar-brand {
+    opacity: 0.4;
+}
+
+.navbar .nav-link:hover,
+.navbar .btn:hover,
+.navbar .navbar-brand:hover {
+    opacity: 1;
     transform: translateY(-2px);
 }
 
-.navbar .nav-link {
-    position: relative;
-    transition: all 0.3s ease;
+.navbar .nav-link:hover {
+    color: #ffc107 !important;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
 }
 
-.navbar .nav-link:hover {
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+.navbar .navbar-brand:hover {
+    color: #ffc107 !important;
+    text-shadow: 0 0 15px rgba(255, 193, 7, 0.8);
+}
+
+.navbar .btn:hover {
+    transform: translateY(-2px) scale(1.03);
+}
+
+.navbar .btn-warning:hover {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
 }

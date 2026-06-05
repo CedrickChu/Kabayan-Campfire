@@ -3,15 +3,19 @@
 {% block content %}
 
 <div
-    class="hero-how-bg"
+    class="background"
     style="background-image: url('{{ url_for('static', filename='images/background.png') }}');">
     {% include "sections/hero.html" %}
     {% include "sections/how_it_works.html" %}
 </div>
+<div  class="background"
+    style="background-image: url('{{ url_for('static', filename='images/background2.png') }}');">
 
-{% include "sections/proof_vault.html" %}
+    {% include "sections/proof_vault.html" %}
 
-{% include "sections/recognition.html" %}
+    {% include "sections/recognition.html" %}
+</div>
+
 
 {% include "sections/trust_moat.html" %}
 
